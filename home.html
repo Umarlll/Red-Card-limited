@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <title>Shop Cards - Premium Selection</title>
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      border-bottom: 2px solid #343a40;
+      padding: 10px 20px;
+    }
+
+    .navbar-brand img {
+      width: 120px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      color: white !important;
+    }
+
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .carousel-inner img {
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .carousel-caption {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .btn-warning {
+      background-color: #ffc107;
+      border: none;
+      font-size: 1.2rem;
+    }
+
+    .btn-warning:hover {
+      background-color: #e0a800;
+    }
+
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      background-color: #343a40;
+      color: white;
+      border-radius: 0 0 15px 15px;
+    }
+
+    .card-title {
+      font-weight: 600;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: #f8f9fa;
+      padding: 20px 0;
+    }
+
+    footer a {
+      color: #f8f9fa;
+      margin-right: 15px;
+    }
+
+    footer a:hover {
+      color: #ffc107;
+    }
+
+    .map-container {
+      margin: 0 auto;
+      max-width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+    }
+
+    /* Hero overlay */
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+     /* Adding animation to dropdown */
+  .animated-dropdown {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .dropdown-menu.show.animated-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .navbar-nav .dropdown-menu {
+      position: static;
+      float: none;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      box-shadow: none;
+    }
+
+    .nav-item .dropdown-toggle {
+      padding: 10px;
+    }
+  }
+
+.imga{
+  height: 300px;
+}
+
+    /* Base styles */
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Parallax effect for the section */
+    .parallax {
+      background-image: url('parallax\ 1.jpg'); /* Replace with your image */
+      height: 100vh;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* Section styling */
+    .content {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f4;
+    }
+
+    .content h1 {
+      font-size: 4rem;
+      color: #333;
+    }
+
+    .text-section {
+      padding: 60px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="LOGO-removebg.png" alt="Logo"> <b>Red Card Limited</b></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./home.html"><b>Home</b></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Categories
+            </a>
+            <ul class="dropdown-menu animated-dropdown">
+              <li><a class="dropdown-item" href="anniversarycards.html">Anniversary Cards</a></li>
+              <li><a class="dropdown-item" href="./celebrationcards.html">Celebration Cards</a></li>
+              <li><a class="dropdown-item" href="./giftcards.html">Gift Cards</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./contactform.html"><b>Contact Us</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Aboutus.html"><b>About Us</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar end -->
+
+  <!-- Hero section start -->
+  <div id="carouselExampleCaptions" class="carousel slide mx-0 my-0 position-relative">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="hero-overlay"></div>
+        <img src="./slder 1.avif" class="img-fluid w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h1 class="display-4 text-light fw-bold">Discover Exclusive Cards</h1>
+          <p class="lead">Unique and memorable cards for every occasion</p>
+          <a href="anniversarycards.html" class="btn btn-lg btn-warning mt-3 px-5">Explore Now</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-overlay"></div>
+        <img src="./card2.webp" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h1 class="display-4 text-light fw-bold">Celebrate with Elegance</h1>
+          <p class="lead">Create lasting memories with our celebration cards</p>
+          <a href="celebrationcards.html" class="btn btn-lg btn-warning mt-3 px-5">Shop Now</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="hero-overlay"></div>
+        <img src="./card3.webp" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-md-block">
+          <h1 class="display-4 text-light fw-bold">Gift Cards for Every Moment</h1>
+          <p class="lead">Find the perfect card to brighten someone's day</p>
+          <a href="giftcards.html" class="btn btn-lg btn-warning mt-3 px-5">Discover More</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <!-- Hero section end -->
+
+  <!-- Category section start -->
+  <h3 class="text-dark text-center my-4">Categories</h3>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="birthday cardf.jpg" class="card-img-top imga" alt="Birthday Card">
+          <div class="card-body">
+            <h5 class="card-title">Birthday Card</h5>
+            <a href="#" class="btn btn-primary">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="5.jpg" class="card-img-top imga" alt="Celebration Card">
+          <div class="card-body">
+            <h5 class="card-title">Celebration Card</h5>
+            <a href="#" class="btn btn-primary">View More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="aniversry.jpg" class="card-img-top imga" alt="Anniversary Card">
+          <div class="card-body">
+            <h5 class="card-title">Anniversary Card</h5>
+            <a href="#" class="btn btn-primary">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Category section end -->
+
+<!-- Category section start -->
+<h3 class="text-dark text-center my-4"></h3>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="eid.jpg" class="card-img-top imga" alt="Birthday Card">
+        <div class="card-body">
+          <h5 class="card-title">Eid Card</h5>
+          <a href="#" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="3.jpg" class="card-img-top imga" alt="Celebration Card">
+        <div class="card-body">
+          <h5 class="card-title">Celebration Card</h5>
+          <a href="#" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <img src="4.jpg" class="card-img-top imga" alt="Anniversary Card">
+        <div class="card-body">
+          <h5 class="card-title">Anniversary Card</h5>
+          <a href="#" class="btn btn-primary">View More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Category section end -->
+
+<!-- Parallax Section 1 -->
+<div class="parallax"></div>
+
+<!-- Content Section 1 -->
+<div class="content">
+  <h1>Welcome to Red Card Limited</h1>
+</div>
+
+<!-- Parallax Section 2 -->
+<div class="parallax" style="background-image: url('parallax\ 3.png');"></div>
+
+<!-- Content Section 2 -->
+<div class="content">
+  <h1>Scroll to see More</h1>
+</div>
+
+<!-- Parallax Section 3 -->
+<div class="parallax" style="background-image: url('parallax\ 2.png');"></div>
+
+<!-- Content Section 3 -->
+<div class="content text-section">
+  <h1>Isn't that cool?</h1><br>
+  <br><br><p>You can also create your own cards Just <a href="contactform.html" class="text-black">Contact Us</a> And Then boom!!.</p>
+</div>
+
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h6 class="fw-bold">Red Card Limited</h6>
+          <p>Your premier source for exquisite cards. Celebrate every occasion with premium quality and heartfelt messages.</p>
+        </div>
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="fw-bold">Products</h6>
+          <p><a href="#">Anniversary Cards</a></p>
+          <p><a href="#">Gift Cards</a></p>
+          <p><a href="#">Celebration Cards</a></p>
+        </div>
+        <div class="col-lg-2 col-md-3 mb-4">
+          <h6 class="fw-bold">Quick Links</h6>
+          <p><a href="#">Pricing</a></p>
+          <p><a href="#">Orders</a></p>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h6 class="fw-bold">Contact</h6>
+          <p><i class="bi bi-house"></i> Fortune Tower, Karachi</p>
+          <p><i class="bi bi-envelope"></i> info@example.com</p>
+          <p><i class="bi bi-phone"></i> +01 234 567 88</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <p>&copy; 2024 ShopCards.com. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Optional JavaScript; choose one of the two! -->
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka24ftD5gS88piD9csqqURtDXuJwqAdzxlwlY5oG6owp0HnKaw+h28i6gX2bpu59" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
